@@ -1,251 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>His Hands | Give Water. Give Hope.</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>His Hands | Clean Water Charity</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- GLOBAL ---------- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      background: #f9fbfd;
       color: #1a1a1a;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ---------- HEADER ---------- */
-    header {
+    /* NAV */
+    .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 60px;
+      padding: 20px 8%;
       background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #0b5ed7;
+    .nav h2 {
+      font-family: 'Poppins', sans-serif;
+      color: #0a3d62;
     }
 
-    nav ul {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-      font-size: 14px;
+    .nav-btn {
+      text-decoration: none;
+      background: #0a3d62;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 6px;
       font-weight: 500;
     }
 
-    .cta-header {
-      padding: 10px 18px;
-      background: #0b5ed7;
-      color: #fff;
-      border-radius: 25px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    /* ---------- HERO ---------- */
+    /* HERO */
     .hero {
-      position: relative;
-      height: 90vh;
-      background: linear-gradient(180deg, #cfefff, #a6ddff);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 60px;
-      overflow: hidden;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent);
+      padding: 80px 8%;
+      background: url('images/his-hands-illustration.png') no-repeat center center;
+      background-size: cover;
+      color: #ffffff;
     }
 
     .hero-text {
       max-width: 520px;
-      z-index: 2;
-      animation: fadeUp 1.2s ease forwards;
+      background: rgba(0,0,0,0.5);
+      padding: 30px;
+      border-radius: 10px;
     }
 
     .hero-text h1 {
-      font-size: 56px;
-      font-weight: 700;
-      color: #083d77;
+      font-family: 'Poppins', sans-serif;
+      font-size: 44px;
       margin-bottom: 20px;
     }
 
     .hero-text p {
+      line-height: 1.6;
+      margin-bottom: 30px;
       font-size: 17px;
-      margin-bottom: 32px;
-      color: #2c2c2c;
     }
 
-    .donate-btn {
-      padding: 15px 34px;
-      background: #ffb703;
-      color: #000;
-      border-radius: 35px;
-      font-weight: 700;
+    .primary-btn {
+      background: #1e90ff;
+      color: #ffffff;
+      padding: 14px 26px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* MESSAGE SECTION */
+    .message {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding: 80px 8%;
+      background: #ffffff;
+    }
+
+    .message img {
+      max-width: 420px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .message-text h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 36px;
+      color: #0a3d62;
+      margin-bottom: 16px;
+    }
+
+    .message-text p {
       font-size: 16px;
-      box-shadow: 0 10px 25px rgba(255,183,3,0.4);
-      transition: transform 0.3s ease;
-      display: inline-block;
+      line-height: 1.6;
     }
 
-    .donate-btn:hover {
-      transform: translateY(-3px);
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 90px 8%;
+      background: #0a3d62;
+      color: #ffffff;
     }
 
-    /* ---------- ILLUSTRATION ---------- */
-    .illustration {
-      position: relative;
-      width: 360px;
-      height: 360px;
-      z-index: 2;
+    .cta h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 34px;
+      margin-bottom: 16px;
     }
 
-    .glow {
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 50%;
-      top: 30px;
-      left: 70px;
-      filter: blur(40px);
-      animation: pulse 3s infinite ease-in-out;
+    .cta p {
+      font-size: 16px;
+      margin-bottom: 30px;
     }
 
-    .water-stream {
-      position: absolute;
-      width: 14px;
-      height: 0;
-      background: #0b5ed7;
-      left: 175px;
-      top: 20px;
-      border-radius: 10px;
-      animation: flow 2s infinite ease-in-out;
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #072b40;
+      color: #ffffff;
+      font-size: 14px;
     }
 
-    .hands {
-      width: 240px;
-      height: 130px;
-      background: #f3c7a3;
-      border-radius: 0 0 140px 140px;
-      position: absolute;
-      bottom: 90px;
-      left: 60px;
-    }
-
-    .well {
-      width: 190px;
-      height: 110px;
-      background: #6c757d;
-      border-radius: 0 0 95px 95px;
-      position: absolute;
-      bottom: 0;
-      left: 85px;
-    }
-
-    /* ---------- ANIMATIONS ---------- */
-    @keyframes flow {
-      0% { height: 0; opacity: 0; }
-      30% { height: 140px; opacity: 1; }
-      100% { height: 140px; opacity: 0; }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.6; }
-      50% { transform: scale(1.1); opacity: 0.9; }
-    }
-
-    /* ---------- MOBILE ---------- */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      header {
-        padding: 20px;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero {
+      .hero, .message {
         flex-direction: column;
         text-align: center;
-        padding-top: 60px;
       }
 
-      .illustration {
-        margin-top: 40px;
+      .hero-text h1 {
+        font-size: 36px;
       }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">His Hands</div>
-
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Get Involved</li>
-        <li>Donate</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-
-    <a href="#" class="cta-header">Give Water. Give Hope.</a>
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <h2>His Hands</h2>
+    <a href="#donate" class="nav-btn">Give Water. Give Hope.</a>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-
     <div class="hero-text">
-      <h1>Every Drop Brings Life.</h1>
+      <h1>Clean Water for Every Community</h1>
       <p>
-        Join His Hands to bring clean water and hope to communities in need.
+        His Hands is a non-profit organization dedicated to building wells and boreholes
+        for communities that lack access to safe and clean drinking water.
       </p>
-      <a href="#" class="donate-btn">Donate Now</a>
-    </div>
-
-    <div class="illustration">
-      <div class="glow"></div>
-      <div class="water-stream"></div>
-      <div class="hands"></div>
-      <div class="well"></div>
+      <a href="#donate" class="primary-btn">Donate to Build a Well</a>
     </div>
   </section>
+
+  <!-- MESSAGE / IMPACT -->
+  <section class="message">
+    <img src="images/well-life.jpg" alt="Clean water well bringing life">
+    <div class="message-text">
+      <h2>Every Drop Brings Life</h2>
+      <p>
+        Clean water saves lives. It restores dignity, improves health,
+        and creates opportunities for families and children to thrive.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="donate">
+    <h2>Be the Reason a Community Has Clean Water</h2>
+    <p>Your support helps us build sustainable water sources for villages in need.</p>
+    <a href="#" class="primary-btn">Support a Community</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 His Hands. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
